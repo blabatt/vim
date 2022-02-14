@@ -1,0 +1,107 @@
+\section{Scripting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Setup}
+
+\entry{35mm}{:set syntax on}{ }\\
+\entry{35mm}{:set filetype=<lang>}{ }\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Mapping}
+\textit{Use the form (optional <buffer> is literal):} \\
+:[|o|n|v|i]noremap <buffer>? <seq>* <cmd> \\
+\textit{where prefix $\in$: \underline{o}perator pending, \underline{n}ormal, \underline{v}isual, \underline{i}nsert mode.}\\
+
+\entry{25mm}{:nmap -x dd}{x seq maps to dd }\\
+\entry{25mm}{:map -r CTRL-R}{pplies in all modes }\\
+\entry{25mm}{:nnoremap -x dd}{void recursion }\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Leaders}
+
+\entry{43mm}{:let mapleader = \textquotedbl<seq>\textquotedbl}{set }\\
+\entry{43mm}{localleader = \textquotedbl<seq>\textquotedbl}{set }\\
+\entry{43mm}{:nnoremap <leader>y y1W}{use }\\
+
+\subsection*{Special Chars}
+\begin{multicols}{3}
+\scriptsize
+\begin{itemize}[label={}]
+    \item <space>
+    \item <C-x>
+    \item <Esc>
+    \item <cword>
+    \item <cWORD>
+    \item <F7>
+    \item <BS>
+    \item <Del>
+    \item <Bslash>
+    %\item <LeftMouse>
+    \item <Up>
+    \item <CR>
+    \item <nop>
+\end{itemize}
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Variables}
+
+\entry{25mm}{:let var=\textquotedbl foo\textquotedbl}{bind to var }\\
+\entry{25mm}{:echo foo}{inspect variable }\\
+\entry{25mm}{:echo \&textwidth}{\& deref's options }\\
+\entry{25mm}{:let @a=\textquotedbl hi!\textquotedbl}{bind to reg \say{a} }\\
+\entry{25mm}{:let b:foo=\textquotedbl bar\textquotedbl}{\underline{b}uffer \textit{scoped}}\\
+
+\textit{Scope $\in$ \{\underline{a}rgs, \underline{b}uff, \underline{l}ocl, \underline{s}crpt, \underline{g}lobl, \underline{w}ind, \underline{v}im\}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Functions}
+
+\entry{33mm}{:function <fname>()}{name capitalz'd }\\
+\entry{33mm}{:   <cmd>*}{as needed }\\
+\entry{33mm}{:   return }{if necessary }\\
+\entry{33mm}{:endfunction}{  }\\
+\textit{Ref args by post'n: a:1, a:2, ..., or a:000 (all).}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Conditionals}
+
+\entry{25mm}{:if <cond>}{see operators below }\\
+\entry{25mm}{:   <cmd>*}{repeat as needed }\\
+\entry{25mm}{:elseif}{or :else }\\
+\entry{25mm}{:endif}{ }\\
+
+\begin{tabular}{c c c}
+    mode-depend & insensitive & sensitive \\
+    \hline
+    == & ==\# & ==? \\
+    > & >\# & >? \\
+    < & <\# & <?
+\end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Types}
+
+\underline{Numbers} $\in {\mathbb{Z}, \mathbb{Q}}$ (int or float), and displayed as hex (eg 0xff), oct (eg 015), or sci (3.0e8).\\
+\underline{Strings} denoted with \textquotedbl \hspace{1pt}; concat'd with . ; special chars escaped with \textbackslash. \\
+\underline{Dictionaries} very much like json, keys are strings; deref with dot-notation or []s.\\
+\underline{Lists} defined [1,2,3], indexed lst[3]; concat'd with +, \& can nest [1,[3,4],2] or slice [1:3].\\
+Manipulate with funcs (\hlc[pastelgrey]{:help functions}) like len(), get(), index(), keys(), join(), reverse(), etc.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Loops}
+
+\entry{25mm}{:let c = 0}{for setup }\\
+\entry{25mm}{:for i in [1,2,3]}{or :while }\\
+\entry{25mm}{:   <cmd>*}{as needed }\\
+\entry{25mm}{:endfor}{or :endwhile }\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Plugins}
+Located in \textasciitilde /.vim/plugin/ or \textasciitilde/.config/nvim/.\\

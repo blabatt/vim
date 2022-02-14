@@ -1,0 +1,68 @@
+\section{Actions}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Operators}
+\textit{Use like: \codein{[\#]<op><mot>} where <mot> are the simple cursor motions described above. Eg, \codein{y2w} yanks 2 word; \codein{3dd} deletes 3 lines; \codein{cf(} changes to first open paren.}\\
+\entry{25mm}{\#y}{\underline{y}ank \# chars}\\
+\entry{25mm}{x\quad X}{delete aft / bef cursor}\\
+\entry{25mm}{r\quad R}{\ul{r}eplace char(s) @ cursor}\\
+\entry{25mm}{c\quad C}{\ul{c}hange at cursor}\\
+\entry{25mm}{p\quad P}{paste bef. / aft.}\\
+\entry{25mm}{yy\quad dd}{\ul{yy}ank \ul{dd}elete line(s)}\\
+\entry{25mm}{cf<char>}{\ul{c}hange thru found <char>}\\
+\entry{25mm}{>>\quad <<}{shift current line in, out}\\
+\entry{25mm}{==}{zero indent, current line}\\
+\entry{25mm}{\#=}{autoindent \# lines}\\
+\entry{25mm}{\textasciitilde}{change case}\\
+\entry{25mm}{g~~}{change case, whole line}\\
+\entry{25mm}{gu\quad gU}{$\Delta$ case to \ul{U}pper, lower (\ul{u})}\\
+\entry{25mm}{<c-A>|<c-X>}{inc (\underline{a}dd) / dec (\underline{x}) numb}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Enter into Insert Mode}
+\entry{35mm}{I\quad A}{beg (\ul{I}), end (\ul{A}) of line}\\
+\entry{35mm}{i\quad a}{beginning (\ul{i}), end (\ul{a}) of cursor}\\
+\entry{35mm}{O\quad o}{prev (\ul{O}), next (\ul{o}) line}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Insert Mode Edits}
+\entry{25mm}{<C-A>}{enter last typed text}\\
+\entry{25mm}{<C-V><char>}{enter escaped <char>}\\
+\entry{25mm}{<C-R><r>}{paste indicated \underline{r}egister}\\
+\entry{25mm}{<C-R><C-O><r>}{paste reg, orig. spacing}\\
+\entry{25mm}{<C-R><C-P><r>}{paste reg, auto spacing}\\
+\entry{25mm}{<c-O><seq>}{exec seq in normal}\\
+\entry{25mm}{<c-P>}{auto-complete}\\
+\entry{25mm}{<c-X>}{type-specific complet'n}\\
+\entry{25mm}{<c-T>\quad<c-D>}{inden\ul{t}, \ul{d}elete indent}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Find and Replace}
+\entry{25mm}{:s/from/to/gc}{\underline{g}lobal, \underline{c}onfirm}\\
+\entry{25mm}{:\%s/from/to/g}{... in all lines (\%)}\\
+\entry{25mm}{:5,12s/foo/bar/g}{... in lines 5-12}\\
+\entry{25mm}{:.,+5s/foo/bar/g}{... next 5 lines}\\
+\entry{25mm}{:'<,'>s/foo/bar/g}{... in visual block}\\
+\entry{25mm}{:'a,'bs/foo/bar/g}{... between marks}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Macros}
+
+\entry{25mm}{q<letter><seq>q}{record to <letter>}\\
+\entry{25mm}{@<letter>}{replay macro}\\
+\entry{25mm}{5@a}{replay \say{a} 5 times}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Idioms}
+
+\entry{25mm}{xp}{switch 2 letters}\\
+\entry{25mm}{!'asort}{sort to mark \say{a}}\\
+
+\ \\

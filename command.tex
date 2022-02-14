@@ -1,0 +1,202 @@
+\section{Command Mode}
+
+\subsection*{Common Commands}
+
+\entry{34mm}{:w[rite][q]}{write [\&quite]}\\
+\entry{34mm}{ZZ\quad ZQ}{ibid, alias}\\
+\entry{34mm}{:help}{vim help}\\
+\entry{34mm}{:help rust}{on a topic}\\
+\entry{34mm}{u\quad <C-R>}{\ul{u}ndo / redo}\\
+\entry{34mm}{<C-K><char><char>}{insert \href{http://vimdoc.sourceforge.net/htmldoc/digraph.html}{digraph}}\\
+\entry{34mm}{<C-V>u<unicode>}{insert raw \href{https://www.serverwatch.com/guides/unicode-characters-in-vim/}{unicode}}\\
+\entry{34mm}{:digraphs}{list digraphs}\\
+\entry{34mm}{<C-G>}{file loc}\\
+\entry{34mm}{:source <file>}{load a file}\\
+\entry{34mm}{@:}{repeat last cmd}\\
+\entry{34mm}{:!<cmd>}{run ext cmd}\\
+
+\api
+{2cm}{
+ascii   \\
+digraph \\
+echo[m] \\
+find    \\
+fixdel 
+
+}
+{2cm}{
+go      \\
+gre     \\
+ls      \\
+mak     \\
+normal  
+
+}
+{2cm}{
+redraw!     \\
+shell       \\
+sleep       \\
+statusline* \\
+visual      
+
+}
+\stopapi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Statement Evaluation}
+:execute \textquotedbl <str>\textquotedbl \\
+... for example, to insert \say{;} at EOL \& return: \\
+:execute "normal! mqA;\textbackslash<esc>`q"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Printing}
+
+\entry{40mm}{:hardcopy > out.pdf}{to pdf }\\
+\entry{40mm}{:set printfont=courier:h10}{font }\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Abbreviations}
+
+\entry{25mm}{:abbreviations}{show abbrevs }\\
+\entry{25mm}{:ab <f> <t>}{set an abbrev. }\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Syntax Highlighting}
+:highlight <grp> <ttype>=<attr> \\
+where <ttype> $\in$ term, cterm, gui \& attr $\in$: \\
+
+\api
+{2cm}{
+bold    \\
+{[\#rrggbb]}
+
+}
+{2cm}{
+underline   \\
+{[col\_name]}
+
+}
+{2cm}{
+reverse     \\
+standout
+
+}
+\stopapi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Autocommands}
+Syntax:
+\begin{enumerate}
+    \item :autocmd <event>* <ft\_glob> <cmd>
+    \item :autocmd FileType <ft\_glob> <cmd>
+\end{enumerate}
+Examples:\\
+\begin{tabular}{l}
+
+\begin{lstlisting}
+:autocmd BufNewFile *.txt :write
+\end{lstlisting} \\
+
+\begin{lstlisting}
+:autocmd BufWritePre,BufRead * ...
+\end{lstlisting} \\
+
+\end{tabular}
+
+Best to use \say{augroups}:
+\begin{lstlisting}
+:augroup <grp_name>
+:    autocmd! ...
+:augroup END
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Filters}
+
+\entry{25mm}{!15G<cmd>}{filter, here to line 15 }\\
+\entry{25mm}{!15G sort}{example filter }\\
+\entry{25mm}{!!<cmd>}{single-line filter }\\
+\entry{25mm}{!!date}{idiomatic: insert date }\\
+\entry{25mm}{!!ls}{idiomatic: f.s. contents }\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Built-in Functions}
+
+\begin{multicols}{3}
+\scriptsize
+\begin{itemize}[label={}]
+    \item append
+    \item arg[c|v]
+    \item browse
+    \item bufexists
+    \item bufloaded
+    \item bufname
+    \item buf[win]nr
+    \item byte2ln
+    \item char2nr
+    \item col
+    \item confirm
+    \item delete
+    %\item did\_filetype
+    \item escape
+    \item exists
+    \item expand
+    \item filereadable
+    \item fnamemod.
+    \item getcwd
+    \item getftime
+    \item getline
+    \item getwinposx
+    \item glob[path]
+    \item has
+    \item histadd
+    \item histdel
+    \item histget
+    \item histnr
+    \item hlexists
+    \item hlID
+    \item hostname
+    \item input
+    \item isdirectory
+    \item libcal
+    \item line
+    \item line2byte
+    \item localtime
+    \item maparg
+    \item mapcheck
+    \item match
+    \item matchend
+    \item matchstr
+    \item nr2char
+    \item rename
+    \item setline
+    \item shellescape
+    \item strftime
+    \item strlen
+    \item strpart
+    \item strtrans
+    \item substitute
+    \item synID
+    \item synIDattr
+    \item system
+    \item tempname
+    \item visualmode
+    \item virtcol
+    \item winbufnr
+    \item winheight
+    \item winnr
+\end{itemize}
+
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Sessions}
+
+\entry{25mm}{:mksession <file>}{save to file }\\
+\entry{25mm}{:source <file>}{restore session }\\
+\textit{Setting :set sessionoptions=<opt>* where <opt> $\in$ \{buffers, globals, winpos, winsize, resize, etc\}, allows you to selectively save parA}ts of a session.
+
+\ \\

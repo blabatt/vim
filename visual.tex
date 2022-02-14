@@ -1,0 +1,47 @@
+\section{Visual Mode}
+\textit{Entering visual mode:
+\begin{itemize}
+    \item v ... enter visual mode
+    \item V ... enter line-visual
+    \item <c-V> ... block visual
+\end{itemize}
+Actions d, y, c, g, J, !, \textasciitilde, all work on selections in visual mode.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Selection}
+\textit{Normal-mode navs begin selection from cursor.}\\
+
+\entry{25mm}{aw\quad aW}{select \ul{w}ord, \ul{a}nd space }\\
+\entry{25mm}{iw\quad iW}{select only (\underline{i}nner) word }\\
+\entry{25mm}{as\quad is}{select sentence }\\
+\entry{25mm}{ap\quad ip}{select paragraph }\\
+\entry{25mm}{a(\quad i(}{select (text) }\\
+\entry{25mm}{a><\quad i><}{select <text> }\\
+\entry{25mm}{a][\quad i][}{select [text] }\\
+\entry{25mm}{a\}\{\quad i\{\}}{select \{text\} }\\
+\entry{25mm}{o}{cursor to \underline{o}ther end of sel }\\
+\entry{25mm}{O}{\underline{o}ther side of block vis. sel. }\\
+\entry{25mm}{\textquotedbl <reg>d}{cut sel. into register }\\
+\entry{25mm}{\$}{extend sel. to EOL }\\
+\entry{25mm}{gv}{toggle last 2 sel'ns }\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Visual Block Mode}
+\textit{See help at \codein{:help v\_b\_<cmd>}} \\
+\entry{25mm}{I<str><esc>}{all rows, insert @ left}\\
+\entry{25mm}{c}{fill block }\\
+\entry{25mm}{C}{fill lines }\\
+\entry{25mm}{r}{repeated fill }\\
+\entry{25mm}{A}{append, all lines }\\
+\entry{25mm}{<\quad >}{shift block }\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Select Mode}
+\textit{Note: SM offer subsets of the other visual modes, similar to what is usually found in other text editors, allowing only replacement of selections with <BS> or typing.}\\
+\entry{25mm}{gh}{enter character-wise SM }\\
+\entry{25mm}{gH}{enter list-wise SM }\\
+\entry{25mm}{g<c-H>}{enter block-wise SM }\\
+\entry{25mm}{$\uparrow$ \quad $\downarrow$}{highlight up down }\\
+\entry{25mm}{$\leftarrow$ \quad $\rightarrow$}{highlight left right }\\
+\ \\

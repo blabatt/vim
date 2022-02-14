@@ -1,0 +1,127 @@
+\section{Navigation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Cursor Motions}
+\entry{20mm}{h\quad l}{letter left, right}\\
+\entry{20mm}{j\quad k}{line up, down}\\
+\entry{20mm}{b\quad  e}{\ul{b}eginning, \ul{e}nd of word}\\
+\entry{20mm}{B\quad  E}{\ul{B}eginning, \ul{E}nd of WORD}\\
+\entry{20mm}{w\quad  W}{next \ul{w}ord / \ul{W}ord}\\
+\entry{20mm}{0\quad\$}{very beginning (0); end (\$)}\\
+\entry{20mm}{\_\quad \textasciicircum}{synonyms: first non-blank}\\
+\entry{20mm}{-\quad +}{start of line: up (-), down (-)}\\
+\entry{20mm}{H\quad M\quad L}{cursor to sreen \ul{H}igh, \ul{M}ed, \ul{L}ow}\\
+\entry{20mm}{:35}{goto 35th line}\\
+\entry{20mm}{|13}{goto 13th line from cur}\\
+\entry{20mm}{13|}{\href{https://stackoverflow.com/questions/4466950/go-to-n-th-symbol-in-line}{goto} 13th char on line}\\
+% \entry{20mm}{\quad }{}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Page Motions}
+
+\entry{25mm}{\textasciicircum u\quad \textasciicircum d}{$\frac{1}{2}$ pg \ul{u}p/\ul{d}own}\\
+\entry{25mm}{\textasciicircum b\quad \textasciicircum f}{full page \ul{b}ef/\ul{f}wd}\\
+\entry{25mm}{\textasciicircum y\quad \textasciicircum e}{scroll line $\uparrow$ / $\downarrow$}\\
+\entry{25mm}{[\#]gg\quad G}{\ul{g}o $\to$ first / last ln (or \#)}\\
+\entry{25mm}{\textasciicircum O\quad \textasciicircum I}{jump \ul{O}ut, \ul{I}nto prev. goto's }\\
+\entry{25mm}{zz\quad zt\quad zb}{center @: cursor(\ul{z}), \ul{t}op, \ul{b}ot}\\
+\entry{25mm}{zL\quad zR}{scroll \ul{L}eft / \ul{R}igh}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Section Motions}
+
+
+
+\entry{25mm}{[[\quad ]]}{next / prev section}\\
+\entry{25mm}{[]}{out of section}\\
+\entry{25mm}{][}{into section}\\
+\entry{25mm}{(\quad )}{move $\leftarrow$ / $\leftarrow$ 1 sentence}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Find}
+\entry{25mm}{f<char>}{single <char> search}\\
+\entry{25mm}{F<char>}{find last <char>}\\
+\entry{25mm}{df<char>}{delete to <char>}\\
+\entry{25mm}{/<str>}{find \ul{n}ext <str>}\\
+\entry{25mm}{/\textbackslash c<str>}{ibid, case-insens.}\\
+\entry{25mm}{?<str>}{backwd search}\\
+\entry{25mm}{:g//}{last search match}\\
+\entry{25mm}{g[d|D] }{search var defs}\\
+\entry{25mm}{<C-I>}{$\to$ word @ cursor}\\
+\entry{25mm}{\%}{$\to$ matching ()s \{\}s, etc}\\
+\entry{25mm}{[d}{definition search}\\
+\entry{25mm}{[(}{next unmatched (}\\
+\entry{25mm}{[\}}{previous unmatched \{}\\
+\entry{25mm}{]m\quad]M}{start / end \ul{m}ethod}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Marks}
+\textit{Mark a place in the file. Buffer-specific marks $\in$ [a-z]; globals $\in$ [A-Z].}\\
+\entry{25mm}{m<letter>}{mark $\to$ letter}\\
+\entry{25mm}{`<letter>}{jump to mark}\\
+\entry{25mm}{'<letter>}{jump to mark's line}\\
+\entry{25mm}{:marks}{list all marks}\\
+\entry{25mm}{:marks ab}{list marks a, b}\\
+\entry{25mm}{:delmarks ab}{delete marks a, b}\\
+\entry{30mm}{d`<letter>\quad d'<letter>}{delete $\to$ mark}\\
+\entry{30mm}{c`<letter>\quad c'<letter>}{change, here to ...}\\
+\entry{30mm}{y`<letter>\quad y'<letter>}{yank, here to ...}\\
+\entry{30mm}{[`<am>\quad']<am>}{jump $\to$ \say{auto mark}}\\
+
+\textit{``Automarks'' include cursor location:}\\
+\begin{itemize}
+    \item \begin{code}'\end{code} ... before last jump
+    \item \begin{code}]\end{code} ... before last inserted text
+    \item \begin{code}[\end{code} ... end of last inserted text
+    \item \begin{code}\textquotedbl\end{code} ... last cursor when left file
+    \item \hlc[pastelgrey]{`<}, \hlc[pastelgrey]{`>} ... last visual select start, stop
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Quickfix Window}
+
+\entry{25mm}{:clist}{list errors}\\
+\entry{25mm}{:cnext}{next error}\\
+\entry{25mm}{:cprevious}{prev. error}\\
+\entry{25mm}{:clast}{last error}\\
+\entry{25mm}{:crewind}{first error}\\
+\entry{25mm}{:cc}{current error}\\
+\entry{25mm}{:clist<rng>}{show range}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Tags}
+
+\entry{25mm}{:[p]tag <tag>}{jump to tag}\\
+\entry{25mm}{<C-]>}{jump to cursor's tag}\\
+\entry{25mm}{<C-T>}{jump back (pop stack)}\\
+\entry{25mm}{:[p|t]select}{}\\
+\entry{25mm}{:[p|t]jump}{jump to tag}\\
+\entry{25mm}{:[p|t]next}{next tag}\\
+\entry{25mm}{:[p|t]previous}{prev. tag}\\
+\entry{25mm}{:[p|t]rewind}{first tag}\\
+\entry{25mm}{:[p|t]last}{last tag}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Insert Mode Navigation}
+\entry{30mm}{$\leftarrow$ \quad $\rightarrow$}{move left / right}\\
+\entry{30mm}{<C-$\leftarrow$>\quad <C-$\rightarrow$>}{move left 1 word}\\
+\entry{30mm}{<PageUp>\quad <PageDown>}{page up / down}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Code Folding}
+\textit{Set / modify fold ``method'':} \\
+\hlc[pastelgrey]{:set foldmethod=[manual|syntax|indent]} \\
+
+\entry{25mm}{zm}{\underline{m}ake auto-fold}\\
+\entry{25mm}{z[r|R]}{\ul{r}emove auto-fold (\ul{R}ecurse}\\
+\entry{25mm}{zf}{manually \ul{f}old}\\
+\entry{25mm}{z[d|D]}{manually \ul{d}elete fold}\\
+
+\ \\

@@ -1,0 +1,66 @@
+\section{Options}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Settings}
+
+\entry{28mm}{:set <opt>}{turn on option }\\
+\entry{28mm}{:set no<opt>}{turn off option }\\
+\entry{28mm}{:set <opt>!}{toggle opt state }\\
+\entry{28mm}{:set <opt>?}{query <opt> state }\\
+\entry{28mm}{:set <opt>=<val>}{set option value }\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Common}
+
+\api
+{2cm}{
+backspace   \\
+binary      \\
+complete    \\
+highlight   \\
+ignorecase  \\
+filetype    \\
+formatoptions\\
+makeprg     \\
+matchtime   \\
+}
+{2cm}{
+matchpairs  \\
+number      \\
+numberwidth \\
+operatorfunc\\
+paste       \\
+scroll[bind]\\
+shiftround  \\
+{[inc|hl]}search\\
+{[smart]}indent \\
+showmatch   \\
+}
+{2cm}{
+shiftwidth  \\
+statusline  \\
+syntax      \\
+textwidth   \\
+wildchar    \\
+winheight   \\
+wrap        \\
+wrapmargin  \\
+}
+\stopapi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Saving}
+\textit{.viminfo saves marks, registers, vars, options \codein{:set viminfo=<opt>*} where <opt> $\in$:}\\
+\entry{25mm}{\textquotesingle <\#>}{max \# files to save marks }\\
+\entry{25mm}{f}{save globals }\\
+\entry{25mm}{r<loc>}{save removeable media }\\
+\entry{25mm}{h}{:nohlsearch }\\
+\entry{25mm}{\textbackslash\textquotedbl<\#>}{\# lines saved per buff. }\\
+\entry{25mm}{\%}{restore buff. list }\\
+\entry{25mm}{@\#}{size, input-line history }\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Indenting \& Tabs}
+
+\textit{Set tabs using softtabstop, softtab, tabstop, expandtab.  Set indentation with equalprog.  Command \hlc[pastelgrey]{:retab} retroactively exchanges tabs \& spaces in an open file. }\\
+\ \\

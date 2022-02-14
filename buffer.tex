@@ -1,0 +1,86 @@
+\section{Buffers, Files}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Buffers}
+
+\entry{25mm}{:buffer}{list all}\\
+\entry{25mm}{:[\#]bnext}{next buf.}\\
+\entry{25mm}{:[\#]bprevious}{prev. buf.}\\
+\entry{25mm}{:blast}{last buf}\\
+\entry{25mm}{:brewind}{first buf}\\
+\entry{25mm}{:set hidden}{hide all others}\\
+\entry{25mm}{:sbnext}{split \& edit}\\
+\entry{25mm}{:baddd <file>}{add indicated buffer}\\
+\entry{25mm}{:bdelete}{discard buffer}\\
+\entry{25mm}{:bunload}{remove buffer}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Files}
+
+\entry{25mm}{:ls}{ls open files}\\
+\entry{25mm}{:e[dit] <file>}{open file}\\
+\entry{25mm}{:enew}{open new file}\\
+\entry{25mm}{:view <file>}{open read-only}\\
+\entry{25mm}{:vi <file>}{same as :e}\\
+\entry{25mm}{:next}{cycle to next}\\
+\entry{25mm}{:previous}{cycle back}\\
+\entry{25mm}{:wnext[!]}{write + next}\\
+\entry{25mm}{:args}{list open files}\\
+\entry{25mm}{:args <\#>}{edit \#th cmd-line file}\\
+\entry{25mm}{CTRL-\textasciicircum}{goto last edited}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Windows}
+\entry{25mm}{:sp[lit]}{screen \underline{sp}lit}\\
+\entry{25mm}{:splitbelow}{splitbelow}\\
+\entry{25mm}{:vs[plit]}{\ul{v}ertical \ul{s}plit}\\
+\entry{25mm}{:10vsplit}{split is 10 lines}\\
+\entry{25mm}{:only}{keep only this }\\
+\entry{25mm}{:hide}{close this w. }\\
+\entry{25mm}{:[w|q]all[!]}{\ul{w}rite, \ul{q}uit all }\\
+\entry{25mm}{:all <file>*}{open all }\\
+\entry{25mm}{3<C-W>w}{goto specific (3\textsuperscript{rd}) }\\
+\entry{25mm}{<C-W>\_}{maximize current }\\
+\entry{25mm}{<C-W>w}{cycle windows}\\
+\entry{32mm}{<C-W>j \quad <C-W>k}{up, down wind.}\\
+\entry{32mm}{<C-W>$\uparrow$ <C-W>$\downarrow$}{up, down wind. }\\
+\entry{32mm}{[\#]<C-W>+ <C-W>-}{expand, contract }\\
+\entry{32mm}{[\#]<C-W>=\quad <C-W>\_}{sizes equal, exact }\\
+\entry{32mm}{<C-r>\quad <C-R>}{\ul{r}otate win's on screen }\\
+\entry{32mm}{<C-W>O}{quit all \underline{O}thers }\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Registers}
+
+\textit{Unlike other editors, Vim:}\\
+\begin{itemize}
+    \item has multiple clipboards (\say{registers})
+    \item can filter registers
+    \item can cut \& paste on many files
+\end{itemize}
+
+\entry{25mm}{\textquotedbl ay3w}{yank 3w into reg \say{a} }\\
+\entry{25mm}{\textquotedbl Byy}{append (\underline{B} vs b) to reg \say{b} }\\
+\entry{25mm}{\textquotedbl <reg>[p|P]}{\underline{P}aste from <reg> }\\
+\entry{25mm}{\textquotedbl*[y|P]}{\underline{y} to, \underline{P} from system clip. }\\
+\entry{25mm}{yy}{yanks into \say{unnamed} reg }\\
+\entry{25mm}{:registers}{show registers }\\
+
+\textit{Special Registers:}\\
+\begin{itemize}
+    \item \begin{code}\textquotedbl@\end{code} ... 
+    \item \begin{code}\textquotedbl"\end{code} ... \say{unnamed} (last yanked)
+    \item \begin{code}\textquotedbl.\end{code} ... last inserted
+    \item \begin{code}\textquotedbl\#\end{code} ... alternate file
+    \item \begin{code}\textquotedbl0\end{code} ... last yanked
+    \item \begin{code}\textquotedbl\%\end{code} ... file name
+    \item \begin{code}\textquotedbl/\end{code} ... last search
+    \item \begin{code}\textquotedbl:\end{code} ... last command
+    \item \begin{code}\textquotedbl*\end{code} ... mouse clipboard
+    \item \begin{code}\textquotedbl=\end{code} ... enter expression
+    \item \begin{code}\textquotedbl\_\end{code} ... black hole
+\end{itemize}
+\ \\
